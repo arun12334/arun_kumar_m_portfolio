@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9fc">
+  <meta name="description" content="Arun Kumar M is Delivery Head at Eron Techno Solutions, leading delivery operations and building Android and iOS applications.">
+  <meta property="og:title" content="Arun Kumar M — Delivery Head at Eron Techno Solutions">
+  <meta property="og:description" content="Team leadership, delivery operations, and mobile app development for Android and iOS.">
+  <meta property="og:type" content="website">
+  <title>Arun Kumar M — Delivery Head at Eron Techno Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f9fc;
+      --surface: #fff;
+      --surface-soft: #f0f5fb;
+      --text: #18243a;
+      --muted: #627089;
+      --line: #e3eaf3;
+      --primary: #1769e0;
+      --primary-dark: #0e4fb2;
+      --cyan: #00a9c7;
+      --shadow: 0 18px 55px rgba(29, 55, 92, .09);
+      --nav-bg: rgba(247, 249, 252, .84);
+      --radius: 22px;
+    }
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #0c1220;
+      --surface: #121b2c;
+      --surface-soft: #182438;
+      --text: #edf3fd;
+      --muted: #a4b1c6;
+      --line: #26354d;
+      --primary: #66a3ff;
+      --primary-dark: #8ab8ff;
+      --cyan: #38d4e5;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .24);
+      --nav-bg: rgba(12, 18, 32, .86);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+      transition: background-color .25s ease, color .25s ease;
+    }
+    h1, h2, h3, h4, .brand, .display-font { font-family: "Manrope", sans-serif; letter-spacing: -.035em; }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--cyan); outline-offset: 3px;
+    }
+    .container { max-width: 1160px; }
+    .navbar {
+      position: sticky; top: 0; z-index: 1000;
+      padding: 14px 0; background: var(--nav-bg);
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 75%, transparent);
+      backdrop-filter: blur(18px);
+    }
+    .brand { text-decoration: none; font-weight: 800; font-size: .99rem; letter-spacing: -.04em; }
+    .brand-mark {
+      display: inline-grid; place-items: center; width: 35px; height: 35px;
+      margin-right: 9px; border-radius: 12px; color: white; font-size: .86rem;
+      background: linear-gradient(135deg, #1769e0, #00a9c7);
+    }
+    .nav-links { display: flex; align-items: center; gap: 25px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .87rem; font-weight: 600; transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .btn { border-radius: 11px; padding: 11px 17px; font-weight: 700; font-size: .9rem; }
+    .btn-primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); color: #fff; }
+    .btn-outline { color: var(--text); border: 1px solid var(--line); background: var(--surface); }
+    .btn-outline:hover { color: var(--primary); border-color: var(--primary); background: var(--surface); }
+    .theme-toggle, .menu-toggle {
+      display: inline-grid; place-items: center; width: 42px; height: 42px;
+      border: 1px solid var(--line); border-radius: 12px; color: var(--text); background: var(--surface);
+    }
+    .menu-toggle { display: none; }
+    .hero {
+      position: relative; overflow: hidden; min-height: 690px; padding: 98px 0 92px;
+      background:
+        radial-gradient(ellipse at 82% 23%, rgba(0, 194, 255, .13), transparent 32%),
+        radial-gradient(ellipse at 6% 82%, rgba(23, 105, 224, .09), transparent 35%);
+    }
+    .hero::after {
+      position: absolute; right: -120px; bottom: -270px; width: 600px; height: 600px;
+      border: 1px solid rgba(23, 105, 224, .08); border-radius: 50%; content: "";
+      box-shadow: 0 0 0 55px rgba(23, 105, 224, .025), 0 0 0 110px rgba(23, 105, 224, .02);
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; color: var(--primary);
+      font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .availability { width: 8px; height: 8px; border-radius: 50%; background: #22b887; box-shadow: 0 0 0 4px rgba(34, 184, 135, .12); }
+    .hero h1 { margin: 19px 0 14px; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 800; line-height: 1.07; }
+    .gradient-text { color: transparent; background: linear-gradient(100deg, #1769e0 10%, #00a9c7 85%); -webkit-background-clip: text; background-clip: text; }
+    .hero-title { min-height: 38px; margin: 0 0 20px; font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 700; }
+    .typing-cursor { display: inline-block; width: 2px; height: 1em; margin-left: 3px; vertical-align: -.1em; background: var(--cyan); animation: blink .8s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .hero-copy { max-width: 600px; color: var(--muted); font-size: 1.04rem; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 32px; }
+    .tag {
+      display: inline-flex; align-items: center; padding: 7px 12px; border: 1px solid var(--line);
+      border-radius: 100px; color: var(--muted); background: var(--surface); font-size: .78rem; font-weight: 600;
+    }
+    .hero-art { position: relative; display: grid; min-height: 400px; place-items: center; }
+    .code-card {
+      position: relative; z-index: 2; width: min(100%, 410px); padding: 25px;
+      border: 1px solid color-mix(in srgb, var(--line) 80%, white);
+      border-radius: 25px; background: color-mix(in srgb, var(--surface) 88%, transparent);
+      box-shadow: var(--shadow); backdrop-filter: blur(16px); transform: rotate(1deg);
+    }
+    .window-dots { display: flex; gap: 6px; margin-bottom: 22px; }
+    .window-dots span { width: 8px; height: 8px; border-radius: 50%; background: #f28a7f; }
+    .window-dots span:nth-child(2) { background: #f4c368; }
+    .window-dots span:nth-child(3) { background: #54c79a; }
+    .code-line { margin: 6px 0; color: var(--muted); font-family: Consolas, monospace; font-size: .82rem; }
+    .code-line .key { color: #bd75de; }
+    .code-line .value { color: var(--cyan); }
+    .code-line .accent { color: var(--primary); }
+    .profile-badge {
+      display: flex; align-items: center; gap: 13px; margin-top: 24px; padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+    .avatar {
+      display: grid; flex: 0 0 48px; place-items: center; height: 48px; border-radius: 16px;
+      color: white; background: linear-gradient(135deg, #1769e0, #03b3c5); font-weight: 800;
+    }
+    .profile-badge strong { display: block; font-size: .9rem; }
+    .profile-badge small { color: var(--muted); }
+    .float-icon {
+      position: absolute; z-index: 3; display: grid; place-items: center; width: 54px; height: 54px;
+      border: 1px solid var(--line); border-radius: 17px; color: var(--primary); background: var(--surface);
+      box-shadow: var(--shadow); font-size: 1.4rem; animation: float 4s ease-in-out infinite;
+    }
+    .float-icon.one { top: 14%; left: 4%; }
+    .float-icon.two { top: 9%; right: 3%; animation-delay: .6s; color: #d7783f; }
+    .float-icon.three { right: 2%; bottom: 12%; animation-delay: 1.1s; color: #6a69da; }
+    @keyframes float { 50% { transform: translateY(-10px); } }
+    .section { padding: 100px 0; }
+    .section-sm { padding: 74px 0; }
+    .section-heading { max-width: 650px; margin: 0 auto 48px; text-align: center; }
+    .section-heading .eyebrow { justify-content: center; }
+    .section-heading h2 { margin: 12px 0; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; }
+    .section-heading p { margin: 0; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 58px; align-items: center; }
+    .about-copy h2 { margin: 12px 0 20px; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; }
+    .about-copy p { color: var(--muted); }
+    .highlight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 13px; }
+    .highlight {
+      display: flex; align-items: flex-start; gap: 12px; min-height: 84px; padding: 16px;
+      border: 1px solid var(--line); border-radius: 16px; background: var(--surface);
+    }
+    .highlight i { color: var(--primary); font-size: 1.15rem; }
+    .highlight span { font-size: .88rem; font-weight: 700; line-height: 1.45; }
+    .skills-section { background: var(--surface-soft); }
+    .skill-group {
+      height: 100%; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius);
+      background: var(--surface); transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .skill-group:hover, .service-card:hover, .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .skill-group h3 { margin: 0 0 20px; font-size: 1rem; font-weight: 800; }
+    .skill-items { display: flex; flex-wrap: wrap; gap: 9px; }
+    .skill-chip { padding: 8px 11px; border: 1px solid var(--line); border-radius: 10px; color: var(--muted); font-size: .82rem; font-weight: 600; }
+    .skill-chip i { margin-right: 5px; color: var(--primary); }
+    .timeline { position: relative; max-width: 850px; margin: 0 auto; padding-left: 32px; }
+    .timeline::before { position: absolute; top: 6px; bottom: 8px; left: 8px; width: 2px; background: var(--line); content: ""; }
+    .timeline-item { position: relative; margin-bottom: 25px; padding: 26px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .timeline-item::before { position: absolute; top: 30px; left: -31px; width: 16px; height: 16px; border: 4px solid var(--bg); border-radius: 50%; background: var(--primary); content: ""; box-shadow: 0 0 0 2px var(--primary); }
+    .timeline-item h3 { margin: 0 0 3px; font-size: 1.2rem; font-weight: 800; }
+    .timeline-meta { color: var(--primary); font-size: .88rem; font-weight: 700; }
+    .timeline-item p, .timeline-item li { color: var(--muted); font-size: .92rem; }
+    .timeline-item ul { margin: 14px 0 0; padding-left: 19px; }
+    .project-card {
+      height: 100%; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius);
+      background: var(--surface); transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .project-cover {
+      display: flex; align-items: center; justify-content: space-between; min-height: 145px; padding: 25px;
+      color: white; background: linear-gradient(135deg, #1769e0, #41b9cd);
+    }
+    .project-cover.alt { background: linear-gradient(135deg, #4739a8, #a76ce0); }
+    .project-cover.green { background: linear-gradient(135deg, #087b78, #41b99a); }
+    .project-cover.orange { background: linear-gradient(135deg, #bf6131, #eeae58); }
+    .project-cover.rose { background: linear-gradient(135deg, #a03d68, #e883a0); }
+    .project-cover i { font-size: 3rem; opacity: .9; }
+    .project-number { font-family: "Manrope", sans-serif; font-size: 2.6rem; font-weight: 800; opacity: .4; }
+    .project-body { padding: 24px; }
+    .project-body h3 { margin: 0 0 10px; font-size: 1.15rem; font-weight: 800; }
+    .project-body p { color: var(--muted); font-size: .91rem; }
+    .feature-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 15px 0; }
+    .feature-list span { padding: 5px 9px; border-radius: 8px; color: var(--muted); background: var(--surface-soft); font-size: .74rem; }
+    .tech-list { color: var(--primary); font-size: .79rem; font-weight: 700; }
+    .service-card {
+      height: 100%; padding: 25px; border: 1px solid var(--line); border-radius: var(--radius);
+      background: var(--surface); transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .service-icon {
+      display: grid; place-items: center; width: 49px; height: 49px; margin-bottom: 19px;
+      border-radius: 15px; color: var(--primary); background: rgba(23, 105, 224, .1); font-size: 1.35rem;
+    }
+    .service-card h3 { margin: 0 0 9px; font-size: 1.03rem; font-weight: 800; }
+    .service-card p { margin: 0; color: var(--muted); font-size: .89rem; }
+    .workflow { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+    .workflow-step { position: relative; padding: 20px 14px; border: 1px solid var(--line); border-radius: 17px; background: var(--surface); text-align: center; }
+    .workflow-step .step-number { display: grid; place-items: center; width: 38px; height: 38px; margin: 0 auto 12px; border-radius: 12px; color: white; background: var(--primary); font-weight: 800; }
+    .workflow-step strong { font-size: .82rem; line-height: 1.4; }
+    .github-panel {
+      display: flex; align-items: center; justify-content: space-between; gap: 26px; padding: 36px;
+      border: 1px solid var(--line); border-radius: 26px; background:
+        radial-gradient(circle at 90% 15%, rgba(0, 194, 255, .12), transparent 30%), var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .github-panel h3 { margin: 0 0 8px; font-size: 1.55rem; font-weight: 800; }
+    .github-panel p { margin: 0; color: var(--muted); }
+    .github-icon { color: var(--text); font-size: 3.2rem; }
+    .contact-section { background: var(--surface-soft); }
+    .contact-card { height: 100%; padding: 29px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .contact-card h3 { margin: 0 0 12px; font-size: 1.25rem; font-weight: 800; }
+    .contact-item { display: flex; align-items: flex-start; gap: 13px; margin-top: 22px; }
+    .contact-item i { color: var(--primary); font-size: 1.1rem; }
+    .contact-item small { display: block; color: var(--muted); }
+    .contact-item strong { font-size: .92rem; overflow-wrap: anywhere; }
+    .form-label { font-size: .86rem; font-weight: 700; }
+    .form-control { padding: 12px 14px; border-color: var(--line); border-radius: 11px; color: var(--text); background: var(--bg); }
+    .form-control:focus { border-color: var(--primary); color: var(--text); background: var(--bg); box-shadow: 0 0 0 .2rem rgba(23, 105, 224, .12); }
+    .form-control::placeholder { color: var(--muted); opacity: .75; }
+    .form-status { min-height: 25px; color: var(--muted); font-size: .87rem; }
+    footer { padding: 31px 0; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-copy { color: var(--muted); font-size: .85rem; }
+    .social-links { display: flex; gap: 12px; }
+    .social-links a { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); text-decoration: none; }
+    .social-links a:hover { color: var(--primary); border-color: var(--primary); }
+    .back-to-top {
+      position: fixed; right: 22px; bottom: 22px; z-index: 900; display: grid; place-items: center;
+      width: 46px; height: 46px; overflow: hidden; border: 0; border-radius: 14px; color: white; background: var(--primary);
+      box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity .2s ease, transform .2s ease;
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .back-to-top-water {
+      position: absolute; right: 0; bottom: 0; left: 0; z-index: 0; height: var(--water-level, 0%);
+      border-radius: 0 0 14px 14px; background: linear-gradient(180deg, #24c5dc, #00a9c7);
+      transition: height .12s linear;
+    }
+    .back-to-top-water::before {
+      position: absolute; top: -5px; left: -35%; width: 170%; height: 10px; content: "";
+      background: radial-gradient(ellipse at center, #38d4e5 58%, transparent 62%) 0 0 / 24px 12px repeat-x;
+      animation: back-to-top-wave 1.8s linear infinite;
+    }
+    @keyframes back-to-top-wave { to { background-position: 24px 0; } }
+    .back-to-top i { position: relative; z-index: 1; }
+    .reveal {
+      opacity: 0; transform: translate3d(0, 24px, 0);
+      transition: opacity .65s ease var(--reveal-delay, 0ms), transform .65s cubic-bezier(.2, .7, .2, 1) var(--reveal-delay, 0ms);
+      will-change: opacity, transform;
+    }
+    .reveal[data-reveal-effect="left"] { transform: translate3d(-32px, 0, 0); }
+    .reveal[data-reveal-effect="right"] { transform: translate3d(32px, 0, 0); }
+    .reveal[data-reveal-effect="zoom"] { transform: scale(.94); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; transition-delay: 0ms !important; will-change: auto; }
+    }
+    @media (max-width: 991.98px) {
+      .nav-links {
+        position: absolute; top: 100%; left: 0; right: 0; display: none; align-items: stretch;
+        gap: 0; padding: 10px 24px 18px; border-bottom: 1px solid var(--line); background: var(--bg);
+      }
+      .nav-links.open { display: flex; flex-direction: column; }
+      .nav-links a { padding: 10px 0; }
+      .menu-toggle { display: inline-grid; }
+      .nav-actions .resume-nav { display: none; }
+      .hero { min-height: auto; padding: 76px 0; }
+      .hero-art { min-height: 350px; margin-top: 25px; }
+      .about-grid { grid-template-columns: 1fr; gap: 30px; }
+      .workflow { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 575.98px) {
+      .section { padding: 74px 0; }
+      .hero { padding: 62px 0 52px; }
+      .hero-art { min-height: 330px; }
+      .float-icon { width: 44px; height: 44px; }
+      .code-card { padding: 20px; }
+      .highlight-grid { grid-template-columns: 1fr; }
+      .workflow { grid-template-columns: repeat(2, 1fr); }
+      .github-panel, .footer-inner { align-items: flex-start; flex-direction: column; }
+      .github-panel { padding: 25px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="container d-flex align-items-center justify-content-between">
+        <a class="brand" href="#home" aria-label="Arun Kumar M, home"><span class="brand-mark">AK</span>ARUN KUMAR M</a>
+        <div class="nav-links" id="primary-navigation">
+          <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
+          <a href="#experience">Experience</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#services">Services</a><a href="#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle color theme"><i class="bi bi-moon-stars"></i></button>
+          <button class="btn btn-primary resume-nav" type="button" data-download-resume><i class="bi bi-download me-1"></i>Resume</button>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation"><i class="bi bi-list"></i></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="eyebrow"><span class="availability"></span> Delivery Head @ Eron Techno Solutions</div>
+            <h1>Hi, I'm<br><span class="gradient-text">Arun Kumar M</span></h1>
+            <p class="hero-title">Team Management · Delivery Operations · <span id="typing-text" class="gradient-text">Android &amp; iOS Apps</span><span class="typing-cursor" aria-hidden="true"></span></p>
+            <p class="hero-copy">I lead teams and delivery operations at Eron Techno Solutions while bringing hands-on experience building web and mobile applications with React, Angular, and Ionic.</p>
+            <div class="hero-buttons">
+              <a class="btn btn-primary" href="#projects">Explore My Work <i class="bi bi-arrow-up-right ms-1"></i></a>
+              <button class="btn btn-outline" type="button" data-download-resume><i class="bi bi-download me-1"></i>Download Resume</button>
+              <a class="btn btn-outline" href="#contact">Contact Me</a>
+            </div>
+            <div class="hero-tags" aria-label="Areas of expertise">
+              <span class="tag">Team Management</span><span class="tag">Delivery Operations</span><span class="tag">Software Developer</span>
+              <span class="tag">Android &amp; iOS Apps</span><span class="tag">React · Angular · Ionic</span>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="hero-art" aria-label="Developer profile illustration">
+              <span class="float-icon one" aria-hidden="true"><i class="bi bi-phone"></i></span>
+              <span class="float-icon two" aria-hidden="true"><i class="bi bi-code-slash"></i></span>
+              <span class="float-icon three" aria-hidden="true"><i class="bi bi-lightning-charge"></i></span>
+              <div class="code-card">
+                <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                <p class="code-line"><span class="key">const</span> developer = {</p>
+                <p class="code-line">&nbsp;&nbsp;name: <span class="value">"Arun Kumar M"</span>,</p>
+                <p class="code-line">&nbsp;&nbsp;role: <span class="value">"Delivery Head"</span>,</p>
+                <p class="code-line">&nbsp;&nbsp;company: <span class="value">"Eron Techno Solutions"</span>,</p>
+                <p class="code-line">&nbsp;&nbsp;stack: [<span class="accent">"React"</span>, <span class="accent">"Angular"</span>, <span class="accent">"Ionic"</span>],</p>
+                <p class="code-line">&nbsp;&nbsp;basedIn: <span class="value">"Coimbatore, India"</span></p>
+                <p class="code-line">};</p>
+                <div class="profile-badge">
+                  <span class="avatar">AK</span>
+                  <span><strong>Leading teams. Delivering products.</strong><small>Web, Android &amp; iOS applications.</small></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <div class="eyebrow">A little about me</div>
+            <h2>Leading delivery. Building <span class="gradient-text">digital products.</span></h2>
+            <p>I am Arun Kumar M, Delivery Head at Eron Techno Solutions. I focus on team management and delivery operations, supported by hands-on experience in software and mobile application development.</p>
+            <p>My background includes developing web and Android/iOS applications with React, Angular, and Ionic, collaborating across teams, and delivering user-focused products from planning through implementation.</p>
+            <p>I have worked across technology and engineering teams, with experience spanning frontend development, mobile applications, project planning, and manufacturing process improvement.</p>
+          </div>
+          <div class="highlight-grid reveal" aria-label="Professional highlights">
+            <div class="highlight"><i class="bi bi-people"></i><span>Team Management</span></div>
+            <div class="highlight"><i class="bi bi-kanban"></i><span>Delivery Operations</span></div>
+            <div class="highlight"><i class="bi bi-phone"></i><span>Android &amp; iOS App Development</span></div>
+            <div class="highlight"><i class="bi bi-code-slash"></i><span>React, Angular &amp; Ionic</span></div>
+            <div class="highlight"><i class="bi bi-diagram-3"></i><span>Cross-Functional Collaboration</span></div>
+            <div class="highlight"><i class="bi bi-palette"></i><span>UI/UX Implementation</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">My toolkit</div><h2>Technical <span class="gradient-text">Skills</span></h2>
+          <p>Leadership, frontend, and mobile technologies from my professional experience.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 reveal"><div class="skill-group"><h3><i class="bi bi-window me-2 text-primary"></i>Frontend &amp; UX</h3><div class="skill-items"><span class="skill-chip">React.js 18</span><span class="skill-chip">JavaScript ES6+</span><span class="skill-chip">HTML5</span><span class="skill-chip">CSS3</span><span class="skill-chip">React Router</span><span class="skill-chip">Redux</span><span class="skill-chip">React Hooks</span><span class="skill-chip">Angular 17</span><span class="skill-chip">TypeScript</span><span class="skill-chip">UI/UX</span><span class="skill-chip">Figma</span></div></div></div>
+          <div class="col-md-6 col-lg-4 reveal"><div class="skill-group"><h3><i class="bi bi-phone me-2 text-primary"></i>Mobile Development</h3><div class="skill-items"><span class="skill-chip">Ionic Framework 7</span><span class="skill-chip">Cordova</span><span class="skill-chip">Capacitor</span><span class="skill-chip">Android &amp; iOS Apps</span></div></div></div>
+          <div class="col-md-6 col-lg-4 reveal"><div class="skill-group"><h3><i class="bi bi-kanban me-2 text-primary"></i>Leadership</h3><div class="skill-items"><span class="skill-chip">Team Management</span><span class="skill-chip">Delivery Operations</span><span class="skill-chip">Project Planning</span><span class="skill-chip">Cross-Functional Collaboration</span></div></div></div>
+          <div class="col-md-6 col-lg-6 reveal"><div class="skill-group"><h3><i class="bi bi-terminal me-2 text-primary"></i>Development Tools</h3><div class="skill-items"><span class="skill-chip">Node.js</span><span class="skill-chip">GitHub</span><span class="skill-chip">Android Studio &amp; Build Tools</span><span class="skill-chip">Xcode &amp; Build Tools</span></div></div></div>
+          <div class="col-md-6 col-lg-6 reveal"><div class="skill-group"><h3><i class="bi bi-pc-display me-2 text-primary"></i>Platforms &amp; Languages</h3><div class="skill-items"><span class="skill-chip">Windows</span><span class="skill-chip">macOS</span><span class="skill-chip">Tamil</span><span class="skill-chip">English</span><span class="skill-chip">Malayalam</span></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-heading reveal"><div class="eyebrow">Where I work</div><h2>Professional <span class="gradient-text">Experience</span></h2><p>Progressing from project engineering and frontend development to leading delivery operations.</p></div>
+        <div class="timeline reveal">
+          <article class="timeline-item">
+            <h3>Delivery Head</h3><div class="timeline-meta">Eron Techno Solutions Pvt. Ltd. · Coimbatore, Tamil Nadu · Apr 2024–Present</div>
+            <p class="mt-3">Leading team management and delivery operations while overseeing web and Android/iOS application work. Bringing hands-on frontend and mobile development experience to delivery planning, cross-functional collaboration, and product execution.</p>
+            <ul class="row">
+              <li class="col-md-6">Manage teams and day-to-day delivery operations.</li><li class="col-md-6">Coordinate cross-functional work to deliver web and mobile applications.</li>
+              <li class="col-md-6">Oversee Android and iOS application delivery using Ionic and Angular.</li><li class="col-md-6">Guide responsive interface development using React.js.</li>
+              <li class="col-md-6">Support delivery planning, execution, and quality improvements.</li><li class="col-md-6">Collaborate with UI/UX designers and engineering teams.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <h3>Front End Developer</h3><div class="timeline-meta">Altus Technologies · Coimbatore, Tamil Nadu · Dec 2022–Mar 2024</div>
+            <p class="mt-3">Developed and optimized user-focused web and mobile interfaces with React.js, Angular, and Ionic.</p>
+            <ul class="row">
+              <li class="col-md-6">Built responsive web interfaces and mobile application features.</li><li class="col-md-6">Collaborated with cross-functional teams to deliver new features.</li>
+              <li class="col-md-6">Wrote clean, efficient, well-documented code.</li><li class="col-md-6">Optimized applications for performance and scalability.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <h3>Project Engineer</h3><div class="timeline-meta">Barani Hydraulics India Private Limited · Coimbatore, Tamil Nadu · Jun 2019–Sep 2022</div>
+            <p class="mt-3">Planned engineering projects and contributed to manufacturing process and equipment improvements.</p>
+            <ul class="row">
+              <li class="col-md-6">Defined project scope, schedules, and budgets and monitored progress.</li><li class="col-md-6">Worked with cross-functional teams to identify requirements and prepare project plans.</li>
+              <li class="col-md-6">Designed and developed manufacturing processes, equipment, and tools.</li><li class="col-md-6">Conducted feasibility studies and cost-benefit analyses.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-heading reveal"><div class="eyebrow">Academic background</div><h2>Education &amp; <span class="gradient-text">Qualifications</span></h2></div>
+        <div class="timeline reveal">
+          <article class="timeline-item">
+            <h3>Bachelor of Mechanical Engineering</h3><div class="timeline-meta">Jai Shriram Engineering College · Tiruppur · Aug 2015–Apr 2019</div>
+            <p class="mt-3 mb-0">CGPA: 7.62 · First Class</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Higher Secondary School</h3><div class="timeline-meta">Bishop Ubagaraswamy School · Tiruppur · Apr 2014–Mar 2015</div>
+            <p class="mt-3 mb-0">Percentage: 78%</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="projects">
+      <div class="container">
+        <div class="section-heading reveal"><div class="eyebrow">Selected work</div><h2>Featured <span class="gradient-text">Projects</span></h2><p>Mobile and web applications from my professional experience.</p></div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 reveal"><article class="project-card"><div class="project-cover"><i class="bi bi-wallet2"></i><span class="project-number">01</span></div><div class="project-body"><h3>SVCF LTD</h3><p>A secure finance management app for smooth transactions and easy tracking.</p><div class="feature-list"><span>Finance management</span><span>Secure transactions</span><span>Tracking</span></div><div class="tech-list">Mobile Application · Android &amp; iOS</div></div></article></div>
+          <div class="col-md-6 col-lg-4 reveal"><article class="project-card"><div class="project-cover alt"><i class="bi bi-houses"></i><span class="project-number">02</span></div><div class="project-body"><h3>Dream Treasure — Buy, Rent &amp; Sell</h3><p>A real-estate platform with verified listings, smart search, and property transactions.</p><div class="feature-list"><span>Verified listings</span><span>Smart search</span><span>Buy, rent &amp; sell</span></div><div class="tech-list">Mobile Application · Android &amp; iOS</div></div></article></div>
+          <div class="col-md-6 col-lg-4 reveal"><article class="project-card"><div class="project-cover green"><i class="bi bi-fire"></i><span class="project-number">03</span></div><div class="project-body"><h3>SSM Gas</h3><p>A gas-service app for cylinder booking, receipt downloads, and usage tracking.</p><div class="feature-list"><span>Cylinder booking</span><span>Receipt downloads</span><span>Usage tracking</span></div><div class="tech-list">Mobile Application · Android &amp; iOS</div></div></article></div>
+          <div class="col-md-6 col-lg-4 reveal"><article class="project-card"><div class="project-cover orange"><i class="bi bi-tools"></i><span class="project-number">04</span></div><div class="project-body"><h3>EzGarage</h3><p>A garage and car-wash service manager for customer records, job tracking, and invoices.</p><div class="feature-list"><span>Customer management</span><span>Job status tracking</span><span>Invoice management</span></div><div class="tech-list">Mobile Application · Android &amp; iOS</div></div></article></div>
+          <div class="col-md-6 col-lg-4 reveal"><article class="project-card"><div class="project-cover rose"><i class="bi bi-chat-dots"></i><span class="project-number">05</span></div><div class="project-body"><h3>TryowBOT — WhatsApp Business Automation</h3><p>A WhatsApp automation tool to manage contacts, send templates, and streamline customer messaging.</p><div class="feature-list"><span>Contact management</span><span>Message templates</span><span>Customer messaging</span></div><div class="tech-list">Mobile Application · Android &amp; iOS</div></div></article></div>
+          <div class="col-md-6 col-lg-4 reveal"><article class="project-card"><div class="project-cover"><i class="bi bi-box-seam"></i><span class="project-number">06</span></div><div class="project-body"><h3>SSM Bharat</h3><p>An LPG booking and tracking app for orders, receipts, and cylinder consumption.</p><div class="feature-list"><span>LPG booking</span><span>Order tracking</span><span>Receipts &amp; consumption</span></div><div class="tech-list">Mobile Application · Android &amp; iOS</div></div></article></div>
+          <div class="col-md-6 col-lg-4 reveal"><article class="project-card"><div class="project-cover alt"><i class="bi bi-search"></i><span class="project-number">07</span></div><div class="project-body"><h3>Real Estate Web Application</h3><p>A responsive property-listing platform with advanced search and verified user interactions.</p><div class="feature-list"><span>Property search</span><span>User verification</span><span>Buyer-seller interaction</span></div><div class="tech-list">Web Application</div></div></article></div>
+          <div class="col-md-6 col-lg-4 reveal"><article class="project-card"><div class="project-cover green"><i class="bi bi-cart3"></i><span class="project-number">08</span></div><div class="project-body"><h3>EzBuy Marketplace</h3><p>An online marketplace with secure checkout, order tracking, and product management.</p><div class="feature-list"><span>Secure checkout</span><span>Order tracking</span><span>Product management</span></div><div class="tech-list">E-commerce Web Application</div></div></article></div>
+          <div class="col-md-6 col-lg-4 reveal"><article class="project-card"><div class="project-cover orange"><i class="bi bi-hdd-network"></i><span class="project-number">09</span></div><div class="project-body"><h3>Business API Web Application</h3><p>A scalable REST API application providing authentication, payments, notifications, and core business services.</p><div class="feature-list"><span>Authentication</span><span>Payments</span><span>Notifications</span></div><div class="tech-list">REST API</div></div></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading reveal"><div class="eyebrow">What I do</div><h2>Delivery &amp; Development <span class="gradient-text">Expertise</span></h2><p>Team delivery, web development, and Android and iOS application development.</p></div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-4 reveal"><article class="service-card"><div class="service-icon"><i class="bi bi-people"></i></div><h3>Delivery &amp; Team Leadership</h3><p>Team management and delivery operations for cross-functional software projects.</p></article></div>
+          <div class="col-sm-6 col-lg-4 reveal"><article class="service-card"><div class="service-icon"><i class="bi bi-phone"></i></div><h3>Hybrid Mobile App Development</h3><p>Cross-platform apps with polished interfaces and dependable device behavior.</p></article></div>
+          <div class="col-sm-6 col-lg-4 reveal"><article class="service-card"><div class="service-icon"><i class="bi bi-code-square"></i></div><h3>Ionic &amp; Angular Development</h3><p>Maintainable Ionic and Angular application features built around real user needs.</p></article></div>
+          <div class="col-sm-6 col-lg-4 reveal"><article class="service-card"><div class="service-icon"><i class="bi bi-android2"></i></div><h3>Android &amp; iOS Apps</h3><p>Mobile experiences designed to work across Android and iOS devices.</p></article></div>
+          <div class="col-sm-6 col-lg-4 reveal"><article class="service-card"><div class="service-icon"><i class="bi bi-arrow-left-right"></i></div><h3>REST API Integration</h3><p>Connect application flows to backend services with clear, reliable data handling.</p></article></div>
+          <div class="col-sm-6 col-lg-4 reveal"><article class="service-card"><div class="service-icon"><i class="bi bi-geo-alt"></i></div><h3>GPS &amp; Real-Time Tracking</h3><p>Location-aware features and real-time communication for mobile applications.</p></article></div>
+          <div class="col-sm-6 col-lg-4 reveal"><article class="service-card"><div class="service-icon"><i class="bi bi-window-stack"></i></div><h3>Mobile UI/UX Development</h3><p>Responsive, accessible interfaces that feel natural on a mobile screen.</p></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm skills-section" id="workflow">
+      <div class="container">
+        <div class="section-heading reveal"><div class="eyebrow">How I work</div><h2>Delivery <span class="gradient-text">Workflow</span></h2></div>
+        <div class="workflow reveal">
+          <div class="workflow-step"><span class="step-number">01</span><strong>Requirement &amp; Delivery Planning</strong></div>
+          <div class="workflow-step"><span class="step-number">02</span><strong>Team Alignment</strong></div>
+          <div class="workflow-step"><span class="step-number">03</span><strong>UI/UX Design</strong></div>
+          <div class="workflow-step"><span class="step-number">04</span><strong>Web &amp; Mobile Development</strong></div>
+          <div class="workflow-step"><span class="step-number">05</span><strong>Testing &amp; Quality</strong></div>
+          <div class="workflow-step"><span class="step-number">06</span><strong>Release &amp; Delivery</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="github-panel reveal">
+          <div><div class="eyebrow mb-2">Developer profile</div><h3>Let's connect on GitHub</h3><p>Visit my profile for repositories and developer activity.</p></div>
+          <div class="d-flex align-items-center gap-3"><i class="bi bi-github github-icon" aria-hidden="true"></i><a class="btn btn-outline" id="github-link" href="#contact">GitHub profile <i class="bi bi-arrow-up-right ms-1"></i></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-heading reveal"><div class="eyebrow">Get in touch</div><h2>Let's Build Something <span class="gradient-text">Amazing Together!</span></h2><p>Looking for delivery leadership or a software and mobile application developer? Let's connect.</p></div>
+        <div class="row g-4">
+          <div class="col-lg-5 reveal">
+            <div class="contact-card">
+              <h3>Contact details</h3><p class="text-secondary mb-0">I’m based in Coimbatore, Tamil Nadu, India.</p>
+              <div class="contact-item"><i class="bi bi-person"></i><div><small>Name</small><strong>Arun Kumar M</strong></div></div>
+              <div class="contact-item"><i class="bi bi-geo-alt"></i><div><small>Location</small><strong>Coimbatore, Tamil Nadu, India</strong></div></div>
+              <div class="contact-item" id="email-contact"><i class="bi bi-envelope"></i><div><small>Email</small><strong>Email Arun</strong></div></div>
+              <div class="contact-item" id="phone-contact"><i class="bi bi-telephone"></i><div><small>Phone</small><strong>Call Arun</strong></div></div>
+              <div class="contact-item" id="linkedin-contact"><i class="bi bi-linkedin"></i><div><small>LinkedIn</small><strong>Profile link not configured</strong></div></div>
+              <div class="d-flex flex-wrap gap-2 mt-4"><a class="btn btn-primary" id="whatsapp-link" href="#contact"><i class="bi bi-whatsapp me-1"></i>WhatsApp Me</a><a class="btn btn-outline" href="#projects">View Projects</a></div>
+            </div>
+          </div>
+          <div class="col-lg-7 reveal">
+            <div class="contact-card">
+              <h3>Send a message</h3>
+              <form id="contact-form" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6"><label class="form-label" for="contact-name">Full Name</label><input class="form-control" id="contact-name" name="name" autocomplete="name" required></div>
+                  <div class="col-md-6"><label class="form-label" for="contact-email">Email Address</label><input class="form-control" id="contact-email" name="email" type="email" autocomplete="email" required></div>
+                  <div class="col-12"><label class="form-label" for="contact-subject">Subject</label><input class="form-control" id="contact-subject" name="subject" required></div>
+                  <div class="col-12"><label class="form-label" for="contact-message">Message</label><textarea class="form-control" id="contact-message" name="message" rows="5" required></textarea></div>
+                  <div class="col-12 d-flex flex-wrap align-items-center gap-3"><button class="btn btn-primary" type="submit">Prepare Email <i class="bi bi-send ms-1"></i></button><span class="form-status" id="form-status" role="status" aria-live="polite">Your email app will open when a recipient address is configured.</span></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><a class="brand" href="#home"><span class="brand-mark">AK</span>ARUN KUMAR M</a><div class="footer-copy mt-2">Delivery Head @ Eron Techno Solutions | Team Management · Delivery Operations<br>Designed &amp; Developed by Arun Kumar M. © <span id="current-year"></span></div></div>
+      <div class="social-links" aria-label="Social profiles">
+        <a href="#contact" id="footer-linkedin" aria-label="LinkedIn profile"><i class="bi bi-linkedin"></i></a>
+        <a href="#contact" id="footer-github" aria-label="GitHub profile"><i class="bi bi-github"></i></a>
+        <a href="#contact" id="footer-email" aria-label="Email Arun"><i class="bi bi-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top"><span class="back-to-top-water" aria-hidden="true"></span><i class="bi bi-arrow-up"></i></button>
+  <script src="app.js" defer></script>
+</body>
+</html>
