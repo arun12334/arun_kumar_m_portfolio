@@ -24,7 +24,6 @@ function initializeWebsite(): void {
   initializeBackToTop();
   initializeDynamicYear();
   initializeConfiguredLinks();
-  initializeResumeDownload();
 }
 
 function initializeNavigation(): void {
@@ -273,56 +272,6 @@ function escapeHtml(value: string): string {
   return value.replace(/[&<>"']/g, (character) => {
     const entities: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
     return entities[character];
-  });
-}
-
-function initializeResumeDownload(): void {
-  document.querySelectorAll<HTMLButtonElement>("[data-download-resume]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const resume = [
-        "ARUN KUMAR M",
-        "Delivery Head @ Eron Techno Solutions | Team Management | Delivery Operations | Software Developer | Mobile App Developer - Android & iOS",
-        "Coimbatore, Tamil Nadu, India",
-        "Phone: +91 63690 84994",
-        "Email: arunaakash114@gmail.com",
-        "",
-        "PROFESSIONAL SUMMARY",
-        "Delivery Head at Eron Techno Solutions with experience in team management, delivery operations, frontend development, and Android and iOS applications. Technical background includes React.js, Angular, Ionic, and project engineering.",
-        "",
-        "EXPERIENCE",
-        "Delivery Head — Eron Techno Solutions Pvt. Ltd., Coimbatore | Apr 2024–Present",
-        "Leading team management and delivery operations for web and Android/iOS applications. Supporting delivery planning, cross-functional collaboration, and product execution.",
-        "",
-        "Front End Developer — Altus Technologies, Coimbatore | Dec 2022–Mar 2024",
-        "Developed responsive web and mobile applications with React.js, Angular, and Ionic; collaborated with cross-functional teams, wrote maintainable code, and optimized performance.",
-        "",
-        "Project Engineer — Barani Hydraulics India Private Limited, Coimbatore | Jun 2019–Sep 2022",
-        "Planned project scope, schedules, and budgets; monitored progress; and contributed to manufacturing process, equipment, and tool improvements. Conducted feasibility studies and cost-benefit analyses.",
-        "",
-        "TECHNICAL SKILLS",
-        "React.js 18, JavaScript ES6+, HTML5, CSS3, React Router, Redux, React Hooks, Angular 17, TypeScript, Node.js, UI/UX, Figma, Ionic Framework 7, Cordova, Capacitor, Android Studio, Xcode, GitHub, Windows, macOS.",
-        "",
-        "EDUCATION",
-        "Bachelor of Mechanical Engineering — Jai Shriram Engineering College, Tiruppur | Aug 2015–Apr 2019 | CGPA: 7.62 | First Class",
-        "Higher Secondary School — Bishop Ubagaraswamy School, Tiruppur | Apr 2014–Mar 2015 | 78%",
-        "",
-        "SELECTED PROJECTS",
-        "Mobile applications: SVCF LTD (finance management); Dream Treasure (property marketplace); SSM Gas (cylinder booking); EzGarage (garage and car-wash management); TryowBOT (WhatsApp Business automation); SSM Bharat (LPG booking and tracking).",
-        "Web applications: Real Estate Web Application; EzBuy Marketplace; Business API Web Application.",
-        "",
-        "LANGUAGES",
-        "Tamil, English, and Malayalam."
-      ].join("\r\n");
-      const blob = new Blob([resume], { type: "text/plain;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "Arun-Kumar-M-Resume.txt";
-      document.body.append(link);
-      link.click();
-      link.remove();
-      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-    });
   });
 }
 
