@@ -2,7 +2,8 @@
 const PORTFOLIO_CONFIG = {
     email: "arunaakash114@gmail.com",
     phone: "+91 63690 84994",
-    linkedinUrl: "",
+    linkedinUrl: "https://www.linkedin.com/in/arun-kumar-m-020669275/",
+    portfolioUrl: "https://arun12334.github.io/arun_kumar_m_portfolio/#home",
     githubUrl: "",
     whatsappNumber: "916369084994"
 };
@@ -73,10 +74,10 @@ function initializeTypingAnimation() {
     const target = document.querySelector("#typing-text");
     if (!target || window.matchMedia("(prefers-reduced-motion: reduce)").matches)
         return;
-    const phrases = ["Android & iOS Apps", "Delivery Operations", "Team Management", "React, Angular & Ionic"];
+    const phrases = ["Delivery Head", "Team Management", "Delivery Operations", "Website Developer", "Android & iOS Apps", "React, Angular & Ionic"];
     let phraseIndex = 0;
     let characterIndex = phrases[0].length;
-    let deleting = false;
+    let deleting = true;
     const type = () => {
         const phrase = phrases[phraseIndex];
         characterIndex += deleting ? -1 : 1;
@@ -102,7 +103,7 @@ function initializeScrollReveal() {
         return;
     }
     elements.forEach((element) => {
-        const revealGroup = element.closest(".row, .about-grid, .workflow");
+        const revealGroup = element.closest(".row, .about-grid, .workflow, .timeline");
         const siblings = revealGroup
             ? Array.from(revealGroup.querySelectorAll(".reveal")).filter((sibling) => sibling.parentElement === element.parentElement)
             : [];
@@ -215,6 +216,8 @@ function initializeConfiguredLinks() {
     setConfiguredLink("#footer-github", PORTFOLIO_CONFIG.githubUrl, "GitHub profile");
     setConfiguredLink("#linkedin-contact", PORTFOLIO_CONFIG.linkedinUrl, "LinkedIn");
     setConfiguredLink("#footer-linkedin", PORTFOLIO_CONFIG.linkedinUrl, "LinkedIn profile");
+    setConfiguredLink("#portfolio-contact", PORTFOLIO_CONFIG.portfolioUrl, "portfolio website");
+    setConfiguredLink("#footer-portfolio", PORTFOLIO_CONFIG.portfolioUrl, "Portfolio website");
     const emailContact = document.querySelector("#email-contact");
     if (emailContact && PORTFOLIO_CONFIG.email.trim()) {
         const value = emailContact.querySelector("strong");
@@ -255,7 +258,7 @@ function setConfiguredLink(selector, url, label) {
     else {
         const value = element.querySelector("strong");
         if (value)
-            value.innerHTML = `<a href="${escapeHtml(url.trim())}" target="_blank" rel="noopener noreferrer">View LinkedIn profile</a>`;
+            value.innerHTML = `<a href="${escapeHtml(url.trim())}" target="_blank" rel="noopener noreferrer">View ${escapeHtml(label)}</a>`;
     }
     element.setAttribute("aria-label", label);
 }
